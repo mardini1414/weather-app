@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import CircleBlur from './components/CircleBlur';
 
 /* ---------------------------------------------------------------------------- */
 
@@ -57,6 +58,7 @@ function App() {
         visibility={visibility}
       />
       <Footer />
+      <CircleBlur />
     </Container>
   );
 }
