@@ -1,9 +1,8 @@
 import React from 'react';
+
 import {
-  Button,
   Row,
   Col,
-  FormControl,
 } from 'react-bootstrap';
 
 /* ---------------------------------------------------------------------------- */
@@ -11,11 +10,12 @@ import {
 function Header({ clicked, value, changed }) {
   return (
     <>
-      <h1 className="my-5 text-center text-primary">Weather App</h1>
-      <Row className="justify-content-center px-1">
-        <Col md={4} className="d-flex">
-          <FormControl value={value} onChange={changed} placeholder="Search city" className="me-3" />
-          <Button onClick={clicked} variant="primary" className="text-light">Search</Button>
+      <Row className="justify-content-center px-1 mt-5">
+        <Col md={10} lg={8} xl={5}>
+          <div className="d-flex bg-light px-2 py-1 rounded-3">
+            <input type="text" value={value} onChange={changed} placeholder="Search City" />
+            <button type="button" className="text-primary" onClick={clicked} aria-label="clik"><i className="fas fa-search" /></button>
+          </div>
         </Col>
       </Row>
     </>
