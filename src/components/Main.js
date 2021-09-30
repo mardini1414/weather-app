@@ -8,7 +8,7 @@ function Main({
   img, temp, name, country, weather, wind, humidity, visibility,
 }) {
   return (
-    <Row className="justify-content-center mt-3 px-1">
+    <Row className="justify-content-center mt-2 px-1">
       <Col md={10} lg={8} xl={5}>
         <div className="bg-primary text-light d-flex justify-content-center align-items-center position-relative rounded">
           <span className="position-absolute top-0 mt-2">

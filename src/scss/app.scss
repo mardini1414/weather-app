@@ -9,7 +9,7 @@ body {
   font-family: 'Roboto', sans-serif;
   height: 100vh;
   background-color: $secondary;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   overflow: hidden;
   button, input {
     background: transparent;
@@ -30,10 +30,10 @@ body {
   }
 
   .circle {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: $primary;
-    filter: blur(80px);
+    filter: blur(110px);
     border-radius: 50%;
     z-index: 1;
   }
@@ -56,6 +56,18 @@ body {
   .circle-4 {
     top: 20%;
     right: 20%;
+  }
+
+  #error-message {
+    height: 80px;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    #close-icon {
+      right: -12px;
+      top: -12px;
+      font-size: 1.4rem;
+    }
   }
 
 }

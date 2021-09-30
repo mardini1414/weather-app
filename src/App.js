@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import CircleBlur from './components/CircleBlur';
+import ErrorMessage from './components/ErrorMessage';
 
 /* ---------------------------------------------------------------------------- */
 
@@ -19,19 +20,25 @@ function App() {
   const [wind, setWind] = useState('');
   const [humidity, setHumidity] = useState('');
   const [visibility, setVisibility] = useState('');
+  const [error, setError] = useState('d-block d-none');
 
   // function to get data from api
   const getData = async () => {
-    const resData = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=cacb232f4b748d0760b2ba579000d0d8&units=metric
+    try {
+      const resData = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=cacb232f4b748d0760b2ba579000d0d8&units=metric
     `);
-    setName(resData.data.name);
-    setCountry(resData.data.sys.country);
-    setImg(resData.data.weather[0].icon);
-    setWeather(resData.data.weather[0].description);
-    setTemp(resData.data.main.temp);
-    setWind(resData.data.wind.speed);
-    setHumidity(resData.data.main.humidity);
-    setVisibility(resData.data.visibility / 1000);
+      setName(resData.data.name);
+      setCountry(resData.data.sys.country);
+      setImg(resData.data.weather[0].icon);
+      setWeather(resData.data.weather[0].description);
+      setTemp(resData.data.main.temp);
+      setWind(resData.data.wind.speed);
+      setHumidity(resData.data.main.humidity);
+      setVisibility(resData.data.visibility / 1000);
+      setError('d-block d-none');
+    } catch (e) {
+      setError('d-block');
+    }
 
     setInput('');
   };
@@ -47,6 +54,7 @@ function App() {
         changed={(e) => setInput(e.target.value)}
         clicked={getData}
       />
+      <ErrorMessage show={error} />
       <Main
         img={img}
         temp={temp}

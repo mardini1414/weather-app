@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -17,7 +18,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "fix": "eslint --fix **/*.js --ignore-pattern node_modules/",
+    "fix": "eslint --fix --ext .js,.jsx .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
