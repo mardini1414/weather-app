@@ -1,5 +1,4 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
 import wave from '../assets/wave.svg';
 
 /* ------------------------------------------------------------------------ */
@@ -15,8 +14,8 @@ function Main({
   visibility,
 }) {
   return (
-    <Row className="justify-content-center mt-2 px-1">
-      <Col md={10} lg={8} xl={5}>
+    <div className="row justify-content-center mt-2 px-1">
+      <div className="col-md-5">
         <div className="bg-primary text-light d-flex justify-content-center align-items-center position-relative rounded">
           <span className="position-absolute top-0 mt-2">
             <i className="fas fa-map-marker-alt" />
@@ -54,8 +53,8 @@ function Main({
             <strong className="text-dark">{`${visibility}km`}</strong>
           </div>
         </div>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 }
 
